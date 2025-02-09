@@ -1,121 +1,85 @@
-JavaTest
+# JavaTest Utility Functions
 
-Overview
+## Overview
+This Java program contains utility functions that perform various operations such as reversing a string, sorting integers, checking date ranges, sorting characters, finding the lowest occurrence of a character, and solving mathematical equations.
 
-JavaTest is a Java class that demonstrates various fundamental programming tasks without using built-in utility methods. The tasks include string reversal, sorting integers, checking date ranges, and evaluating mathematical expressions dynamically.
+## Features
+- **Reverse String**: Reverses a given string without using built-in methods like `StringBuilder.reverse()`.
+- **Sort Integers**: Sorts an array of integers in ascending order without using built-in sorting functions.
+- **Date Range Checker**: Checks if a given date falls within a specified date range.
+- **Sort String Characters**: Sorts the characters in a string in ascending order without using `Arrays.sort()`.
+- **Lowest Occurrence Character**: Finds the character with the lowest occurrence in an alphanumeric string.
+- **Solve Equations**: Applies a set of mathematical equations to an array of integers.
 
-Features
+## Usage
 
-Reverse a string without using built-in methods like StringBuilder.reverse().
+### 1. Reverse a String
+```java
+System.out.println(reverseStringWithoutUsingStringMethod("Automation"));
+```
+**Expected Output**: `noitamotuA`
 
-Sort an array of integers without using built-in sorting methods like Arrays.sort().
+### 2. Sort an Array of Integers
+```java
+Integer[] intArray = { 10, 12, 54, 1, 2, -9, 8 };
+Integer[] sortedArray = sortIntegers(intArray);
+System.out.println(Arrays.toString(sortedArray));
+```
+**Expected Output**: `[-9, 1, 2, 8, 10, 12, 54]`
 
-Check if a given date falls within a specified date range.
+### 3. Check If a Date Is Within a Range
+```java
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+Date startDate = sdf.parse("2024-12-01 13:09:22");
+Date endDate = sdf.parse("2025-01-09 20:10:12");
+Date givenDate = sdf.parse("2025-02-02 00:11:22");
 
-Sort a given string in ascending order without using Arrays.sort().
+System.out.println(isInDateRange(givenDate, startDate, endDate));
+```
+**Expected Output**: `false` (since the given date is outside the range)
 
-Find the character with the lowest occurrence in an alphanumeric string.
+### 4. Sort Characters in a String
+```java
+char[] sortedChars = sortStringInAscOrder("testingNG311");
+System.out.println(Arrays.toString(sortedChars));
+```
+**Expected Output**: `[1, 1, 3, G, N, e, g, i, n, s, t, t]`
 
-Apply a series of mathematical equations to an array of integers.
+### 5. Find the Character with the Lowest Occurrence
+```java
+System.out.println(lowestOccurrence("Abc1dd23affbc1ee23u3278"));
+```
+**Expected Output**: `'d'`
 
-Methods
+### 6. Solve Mathematical Equations
+```java
+Integer[] results = solveEquations(new Integer[] {1, 2, 3}, new String[] {"x*x", "x*3-5", "x+6-10"});
+System.out.println(Arrays.toString(results));
+```
+**Expected Output**: `[-4, 26, 76]`
 
-1. reverseStringWithoutUsingStringMethod(String s)
+## How to Run
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-repo/JavaTest.git
+   cd JavaTest
+   ```
+2. Compile and run:
+   ```sh
+   javac JavaTest.java
+   java JavaTest
+   ```
 
-Description: Reverses a given string without using built-in reverse methods.
+## Requirements
+- Java 8 or later
+- IDE (Optional): IntelliJ IDEA, Eclipse, or VS Code
 
-Example Input:
+## Contributing
+Feel free to submit pull requests or issues to improve this utility.
 
-reverseStringWithoutUsingStringMethod("Automation");
+## License
+This project is licensed under the MIT License.
 
-Example Output:
+---
 
-noitamotuA
-
-2. sortIntegers(Integer[] array)
-
-Description: Sorts an array of integers in ascending order without using built-in sorting methods.
-
-Example Input:
-
-sortIntegers(new Integer[]{10, 12, 54, 1, 2, -9, 8});
-
-Example Output:
-
-[-9, 1, 2, 8, 10, 12, 54]
-
-3. isInDateRange(Date givenDate, Date startDate, Date endDate)
-
-Description: Checks if a given date is within the specified date range.
-
-Example Input:
-
-isInDateRange(givenDate, startDate, endDate);
-
-Example Output:
-
-true or false
-
-4. sortStringInAscOrder(String input)
-
-Description: Sorts the characters of a given string in ascending order without using built-in sorting methods.
-
-Example Input:
-
-sortStringInAscOrder("testingNG311");
-
-Example Output:
-
-"1, 1, 3, G, N, e, g, i, n, s, t, t"
-
-5. lowestOccurrence(String input)
-
-Description: Finds the character with the lowest occurrence in an alphanumeric string. If multiple characters have the same lowest occurrence, the first character in ASCII order is returned.
-
-Example Input:
-
-lowestOccurrence("Abc1dd23affbc1ee23u3278");
-
-Example Output:
-
-'d'
-
-6. solveEquations(Integer[] input, String[] equations)
-
-Description: Applies a series of mathematical equations to an array of integers and returns the final computed values.
-
-Example Input:
-
-solveEquations(new Integer [] { 1, 2, 3 }, new String[] { "x*x", "x*3-5", "x+6-10" });
-
-Example Output:
-
-[-4, 26, 76]
-
-Usage
-
-Run the main method to execute test cases for each method.
-
-How to Compile and Run
-
-Ensure you have Java 8 or later installed.
-
-Save the file as JavaTest.java.
-
-Open a terminal and navigate to the directory containing the file.
-
-Compile the Java program:
-
-javac JavaTest.java
-
-Run the program:
-
-java JavaTest
-
-Dependencies
-
-Java 8+
-
-Author
-
-Malik Asad Ali Manzoor
+Happy coding! 🚀
